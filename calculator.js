@@ -22,6 +22,7 @@ function calculatorModule() {
     this._total = x;
     if(typeof this._total !== 'number') {
       this._total = 0;
+      throw new Error('Type mismatch');
     }
     return this._total;
   };
@@ -48,6 +49,9 @@ function calculatorModule() {
   calculator.add = function (x) {
     if(typeof x === 'number') {
       this._total += x;
+    }
+    else {
+      throw new Error('Type mismatch');
     }
   };
 
