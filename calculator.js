@@ -92,6 +92,9 @@ function calculatorModule() {
     if(typeof x === 'number') {
       this._total /= x;
     }
+    else {
+      throw new Error('Type mismatch');
+    }
   };
 
   /**
