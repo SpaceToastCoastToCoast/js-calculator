@@ -7,8 +7,8 @@
  */
 
 function calculatorModule() {
-  let memory;
-  let total;
+  let _memory;
+  let _total;
 
   let calculator = {};
 
@@ -19,11 +19,11 @@ function calculatorModule() {
    */
 
   calculator.load = function(x) {
-    this.total = x;
-    if(typeof this.total !== 'number') {
-      this.total = 0;
+    this._total = x;
+    if(typeof this._total !== 'number') {
+      this._total = 0;
     }
-    return this.total;
+    return this._total;
   };
 
 
@@ -33,10 +33,10 @@ function calculatorModule() {
    */
 
   calculator.getTotal = function() {
-    if(this.total === undefined) {
-      this.total = 0;
+    if(this._total === undefined) {
+      this._total = 0;
     }
-    return this.total;
+    return this._total;
   };
 
 
@@ -47,7 +47,7 @@ function calculatorModule() {
 
   calculator.add = function (x) {
     if(typeof x === 'number') {
-      this.total += x;
+      this._total += x;
     }
   };
 
@@ -58,7 +58,7 @@ function calculatorModule() {
 
   calculator.subtract = function (x) {
     if(typeof x === 'number') {
-      this.total -= x;
+      this._total -= x;
     }
   };
 
@@ -69,7 +69,7 @@ function calculatorModule() {
 
   calculator.multiply = function (x) {
     if(typeof x === 'number') {
-      this.total *= x;
+      this._total *= x;
     }
   };
 
@@ -80,7 +80,7 @@ function calculatorModule() {
 
   calculator.divide = function (x) {
     if(typeof x === 'number') {
-      this.total /= x;
+      this._total /= x;
     }
   };
 
@@ -90,10 +90,10 @@ function calculatorModule() {
    */
 
   calculator.recallMemory = function () {
-    if(typeof this.memory !== 'number') {
-      this.memory = 0;
+    if(typeof this._memory !== 'number') {
+      this._memory = 0;
     }
-    return this.memory;
+    return this._memory;
   };
 
   /**
@@ -101,7 +101,7 @@ function calculatorModule() {
    */
 
   calculator.saveMemory = function() {
-    this.memory = this.total;
+    this._memory = this._total;
   };
 
   /**
@@ -109,7 +109,7 @@ function calculatorModule() {
    */
 
   calculator.clearMemory = function () {
-    this.memory = 0;
+    this._memory = 0;
   };
 
   /**
