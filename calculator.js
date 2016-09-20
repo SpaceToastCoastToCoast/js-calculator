@@ -6,7 +6,7 @@
  * @return {object} `calculator` object that can be used
  */
 
-function calculatorModule() {
+module.exports = function calculatorModule() {
   let _memory;
   let _total;
 
@@ -21,11 +21,10 @@ function calculatorModule() {
   calculator.load = function(x) {
     this._total = x;
     if(typeof this._total !== 'number') {
-      throw new Error('Type mismatch');
+      throw new TypeError('Type mismatch');
     }
     return this._total;
   };
-
 
   /**
    * Return the value of `total`
@@ -49,7 +48,7 @@ function calculatorModule() {
     if(typeof x === 'number') {
       this._total += x;
     } else {
-      throw new Error('Type mismatch');
+      throw new TypeError('Type mismatch');
     }
   };
 
@@ -62,7 +61,7 @@ function calculatorModule() {
     if(typeof x === 'number') {
       this._total -= x;
     } else {
-      throw new Error('Type mismatch');
+      throw new TypeError('Type mismatch');
     }
   };
 
@@ -75,7 +74,7 @@ function calculatorModule() {
     if(typeof x === 'number') {
       this._total *= x;
     } else {
-      throw new Error('Type mismatch');
+      throw new TypeError('Type mismatch');
     }
   };
 
@@ -88,7 +87,7 @@ function calculatorModule() {
     if(typeof x === 'number') {
       this._total /= x;
     } else {
-      throw new Error('Type mismatch');
+      throw new TypeError('Type mismatch');
     }
   };
 
